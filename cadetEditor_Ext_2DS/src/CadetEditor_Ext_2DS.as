@@ -72,8 +72,8 @@ package
 			resourceManager.addResource( new ComponentFactory( GeometrySkin, 				"Geometry Skin", 				"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
 //			resourceManager.addResource( new ComponentFactory( GeometryDebugSkin, 			"Geometry Debug Skin", 			"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
 //			resourceManager.addResource( new ComponentFactory( FractalPolygonSkin, 			"Fractal Polygon Skin", 		"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
-			resourceManager.addResource( new ComponentFactory( ImageSkin, 					"Image Skin", 					"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
-			resourceManager.addResource( new ComponentFactory( MovieClipSkin, 				"MovieClip Skin", 				"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
+			resourceManager.addResource( new ComponentFactory( ImageSkin, 					"Image Skin", 					"Skins", 		CadetEngineIcons.Skin ) );
+			resourceManager.addResource( new ComponentFactory( MovieClipSkin, 				"MovieClip Skin", 				"Skins", 		CadetEngineIcons.Skin ) );
 			resourceManager.addResource( new ComponentFactory( ConnectionSkin, 				"Connection Skin", 				"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
 			resourceManager.addResource( new ComponentFactory( SpringSkin, 					"Spring Skin", 					"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
 //			resourceManager.addResource( new ComponentFactory( ScrollingBackgroundSkin, 	"Scrolling Background Skin", 	"Skins", 		CadetEngineIcons.Skin, 		null, 			1 ) );

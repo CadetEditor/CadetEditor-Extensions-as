@@ -62,7 +62,7 @@ package
 			resourceManager.addResource( new ComponentFactory( Sprite3DComponent, "Sprite3D", "Entities", CadetEngine3DIcons.Mesh ) );
 			
 			// Geometries =====================================
-//			resourceManager.addResource( new ComponentFactory( HeightmapGeometryComponent, "HeightmapGeometry", "Geometry", CadetBuilderAway3D4Icons.Geometry ) );
+//			resourceManager.addResource( new ComponentFactory( HeightmapGeometryComponent, "HeightmapGeometry", "Geometry", CadetEngine3DIcons.Geometry ) );
 			resourceManager.addResource( new ComponentFactory( PlaneGeometryComponent, "PlaneGeometry", "Geometry", CadetEngine3DIcons.Geometry ) );
 			resourceManager.addResource( new ComponentFactory( SphereGeometryComponent, "SphereGeometry", "Geometry", CadetEngine3DIcons.Geometry ) );
 			resourceManager.addResource( new ComponentFactory( CubeGeometryComponent, "CubeGeometry", "Geometry", CadetEngine3DIcons.Geometry ) );			
