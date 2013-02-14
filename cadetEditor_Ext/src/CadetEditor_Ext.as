@@ -6,10 +6,10 @@ package
 	import flash.display.Sprite;
 	
 	import cadet.assets.CadetEngineIcons;
+	import cadet.components.processes.InputProcess;
 	import cadet.components.processes.KeyboardInputMapping;
-	import cadet.components.processes.KeyboardInputProcess;
+	import cadet.components.processes.TouchInputMapping;
 	import cadet.components.sounds.Sound;
-	import cadet.core.ICadetScene;
 	import cadet.entities.ComponentFactory;
 	
 	import flox.app.FloxApp;
@@ -22,8 +22,10 @@ package
 			var resourceManager:ResourceManager = FloxApp.resourceManager;
 			
 			// Processes
-			resourceManager.addResource( new ComponentFactory( KeyboardInputProcess, "Keyboard Input Process", "Processes", CadetEngineIcons.Process, ICadetScene, 1 ) );
-			resourceManager.addResource( new ComponentFactory( KeyboardInputMapping, "Keyboard Input Mapping", "Processes", CadetEngineIcons.Process, KeyboardInputProcess ) );
+			// Input process is different in 2D and 3D due to handling of Touch events by renderers
+			//resourceManager.addResource( new ComponentFactory( InputProcess, "Input Process", "Processes", CadetEngineIcons.Process, ICadetScene, 1 ) );
+			resourceManager.addResource( new ComponentFactory( KeyboardInputMapping, "Keyboard Input Mapping", "Processes", CadetEngineIcons.Process, InputProcess ) );
+			resourceManager.addResource( new ComponentFactory( TouchInputMapping, "Touch Input Mapping", "Processes", CadetEngineIcons.Process, InputProcess ) );
 			
 			// Sounds
 			resourceManager.addResource( new ComponentFactory( Sound, "Sound", null, CadetEngineIcons.Component ) );

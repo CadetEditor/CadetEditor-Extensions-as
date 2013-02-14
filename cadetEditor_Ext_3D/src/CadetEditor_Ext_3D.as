@@ -11,7 +11,7 @@
 package
 {
 	import flash.display.Sprite;
-
+	
 	import cadet.assets.CadetEngineIcons;
 	import cadet.core.ICadetScene;
 	import cadet.entities.ComponentFactory;
@@ -33,6 +33,7 @@ package
 	import cadet3D.components.materials.TextureMaterialComponent;
 	import cadet3D.components.primitives.SkyBoxComponent;
 	import cadet3D.components.processes.HoverCamProcess;
+	import cadet3D.components.processes.InputProcess3D;
 	import cadet3D.components.textures.BitmapCubeTextureComponent;
 	import cadet3D.components.textures.BitmapTextureComponent;
 	
@@ -77,6 +78,7 @@ package
 			resourceManager.addResource( new ComponentFactory( TextureMaterialComponent, "Texture Material", "Materials", CadetEngine3DIcons.Material ) );
 			
 			// Processes ======================================
+			resourceManager.addResource( new ComponentFactory( InputProcess3D, "Input Process", "Processes", CadetEngineIcons.Process, ICadetScene, 1 ) );
 			resourceManager.addResource( new ComponentFactory( HoverCamProcess, "HoverCamProcess", "Processes", CadetEngineIcons.Process, ICadetScene, 1 ) );
 			resourceManager.addResource( new ComponentFactory( Renderer3D, "Away3D Renderer", "Processes", CadetEngine3DIcons.Renderer, ICadetScene, 1 ) );	
 			

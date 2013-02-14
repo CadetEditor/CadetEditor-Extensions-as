@@ -12,8 +12,10 @@ package
 {
 	import flash.display.Sprite;
 	
+	import cadet.assets.CadetEngineIcons;
 	import cadet.components.behaviours.VehicleUserControlBehaviour;
 	import cadet.core.ICadetScene;
+	import cadet.entities.ComponentFactory;
 	
 	import cadet2D.components.behaviours.BezierCurveFootprintBehaviour;
 	import cadet2D.components.behaviours.GeometryFootprintBehaviour;
@@ -30,6 +32,7 @@ package
 	import cadet2D.components.geom.TriangleGeometry;
 	import cadet2D.components.processes.CollisionDetectionProcess;
 	import cadet2D.components.processes.FootprintManagerProcess;
+	import cadet2D.components.processes.InputProcess2D;
 	import cadet2D.components.processes.TrackCamera2DProcess;
 	import cadet2D.components.processes.WorldBounds2D;
 	import cadet2D.components.renderers.Renderer2D;
@@ -41,9 +44,6 @@ package
 	import cadet2D.components.textures.TextureAtlasComponent;
 	import cadet2D.components.textures.TextureComponent;
 	import cadet2D.components.transforms.Transform2D;
-	
-	import cadet.assets.CadetEngineIcons;
-	import cadet.entities.ComponentFactory;
 	
 	import flox.app.FloxApp;
 	import flox.app.managers.ResourceManager;
@@ -58,6 +58,7 @@ package
 			resourceManager.addResource( new ComponentFactory( Entity, "Entity" ) );
 			
 			// Processes
+			resourceManager.addResource( new ComponentFactory( InputProcess2D,				 "Input Process", 				"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
 			resourceManager.addResource( new ComponentFactory( WorldBounds2D, 				"World Bounds 2D", 				"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
 //			resourceManager.addResource( new ComponentFactory( PhysicsProcess, 				"Physics", 						"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
 			resourceManager.addResource( new ComponentFactory( FootprintManagerProcess, 	"Footprint Manager", 			"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
