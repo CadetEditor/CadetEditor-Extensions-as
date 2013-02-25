@@ -20,7 +20,6 @@ package
 	import cadet2D.components.behaviours.BezierCurveFootprintBehaviour;
 	import cadet2D.components.behaviours.GeometryFootprintBehaviour;
 	import cadet2D.components.behaviours.MouseFollowBehaviour;
-	import cadet2D.components.behaviours.ParallaxBehaviour;
 	import cadet2D.components.behaviours.SimpleFootprintBehaviour;
 	import cadet2D.components.core.Entity;
 	import cadet2D.components.geom.BoundingSphere;
@@ -87,7 +86,6 @@ package
 			
 			// Behaviours - Core
 			resourceManager.addResource( new ComponentFactory( MouseFollowBehaviour,		"Mouse Follow",					"Behaviours",	CadetEngineIcons.Behaviour, Entity,		1 ) );
-			resourceManager.addResource( new ComponentFactory( ParallaxBehaviour,			"Parallax",						"Behaviours",	CadetEngineIcons.Behaviour, Entity,		1 ) );
 			
 			resourceManager.addResource( new ComponentFactory( VehicleUserControlBehaviour, "Vehicle User Control", 		"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 	1 ) );
 			
