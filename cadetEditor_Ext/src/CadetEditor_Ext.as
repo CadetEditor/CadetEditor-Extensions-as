@@ -1,5 +1,12 @@
-// Copyright (c) 2012, Unwrong Ltd. http://www.unwrong.com
-// All rights reserved. 
+// =================================================================================================
+//
+//	CadetEngine Framework
+//	Copyright 2012 Unwrong Ltd. All Rights Reserved.
+//
+//	This program is free software. You can redistribute and/or modify it
+//	in accordance with the terms of the accompanying license agreement.
+//
+// =================================================================================================
 
 package 
 {
@@ -9,7 +16,7 @@ package
 	import cadet.components.processes.InputProcess;
 	import cadet.components.processes.KeyboardInputMapping;
 	import cadet.components.processes.TouchInputMapping;
-	import cadet.components.sounds.Sound;
+	import cadet.components.sounds.SoundComponent;
 	import cadet.entities.ComponentFactory;
 	
 	import flox.app.FloxApp;
@@ -22,13 +29,11 @@ package
 			var resourceManager:ResourceManager = FloxApp.resourceManager;
 			
 			// Processes
-			// Input process is different in 2D and 3D due to handling of Touch events by renderers
-			//resourceManager.addResource( new ComponentFactory( InputProcess, "Input Process", "Processes", CadetEngineIcons.Process, ICadetScene, 1 ) );
 			resourceManager.addResource( new ComponentFactory( KeyboardInputMapping, "Keyboard Input Mapping", "Processes", CadetEngineIcons.Process, InputProcess ) );
 			resourceManager.addResource( new ComponentFactory( TouchInputMapping, "Touch Input Mapping", "Processes", CadetEngineIcons.Process, InputProcess ) );
 			
 			// Sounds
-			resourceManager.addResource( new ComponentFactory( Sound, "Sound", null, CadetEngineIcons.Component ) );
+			resourceManager.addResource( new ComponentFactory( SoundComponent, "Sound", null, CadetEngineIcons.Sound ) );
 		}
 	}
 }

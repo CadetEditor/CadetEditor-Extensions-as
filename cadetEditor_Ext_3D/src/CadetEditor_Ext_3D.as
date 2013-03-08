@@ -20,7 +20,7 @@ package
 	import cadet3D.components.cameras.CameraComponent;
 	import cadet3D.components.core.MeshComponent;
 	import cadet3D.components.core.ObjectContainer3DComponent;
-	import cadet3D.components.core.Renderer3D;
+	import cadet3D.components.renderers.Renderer3D;
 	import cadet3D.components.core.Sprite3DComponent;
 	import cadet3D.components.debug.TridentComponent;
 	import cadet3D.components.geom.CubeGeometryComponent;
