@@ -12,7 +12,10 @@ package
 {
 	import flash.display.Sprite;
 	
+	import cadet.assets.CadetEngineIcons;
+	import cadet.components.behaviours.VehicleUserControlBehaviour;
 	import cadet.core.ICadetScene;
+	import cadet.entities.ComponentFactory;
 	
 	import cadet2D.components.core.Entity;
 	
@@ -28,15 +31,12 @@ package
 	import cadet2DBox2D.components.behaviours.VehicleBehaviour;
 	import cadet2DBox2D.components.processes.PhysicsProcess;
 	
-	import cadet.assets.CadetEngineIcons;
-	import cadet.entities.ComponentFactory;
-	
 	import core.app.CoreApp;
 	import core.app.managers.ResourceManager;
 	
-	public class CadetEditor_Ext_2DSBox2D extends Sprite
+	public class CadetEditor_Ext_2DS_Box2D extends Sprite
 	{
-		public function CadetEditor_Ext_2DSBox2D()
+		public function CadetEditor_Ext_2DS_Box2D()
 		{
 			var resourceManager:ResourceManager = CoreApp.resourceManager;
 
@@ -56,7 +56,9 @@ package
 			resourceManager.addResource( new ComponentFactory( SimpleVehicleBehaviour, 		"Simple Vehicle", 				"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 		1 ) );
 			resourceManager.addResource( new ComponentFactory( VehicleBehaviour, 			"Vehicle", 						"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 		1 ) );
 			resourceManager.addResource( new ComponentFactory( MotorbikeBehaviour, 			"Motorbike", 					"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 		1 ) );
-			
+		
+			// Doesn't really belong here..
+			resourceManager.addResource( new ComponentFactory( VehicleUserControlBehaviour, "Vehicle User Control", 		"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 	1 ) );
 		}
 	}
 }
