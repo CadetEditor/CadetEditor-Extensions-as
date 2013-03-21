@@ -29,6 +29,7 @@ package
 	import cadet2D.components.geom.RectangleGeometry;
 	import cadet2D.components.geom.TerrainGeometry;
 	import cadet2D.components.geom.TriangleGeometry;
+	import cadet2D.components.particles.PDParticleSystemComponent;
 	import cadet2D.components.processes.CollisionDetectionProcess;
 	import cadet2D.components.processes.FootprintManagerProcess;
 	import cadet2D.components.processes.InputProcess2D;
@@ -44,14 +45,14 @@ package
 	import cadet2D.components.textures.TextureComponent;
 	import cadet2D.components.transforms.Transform2D;
 	
-	import flox.app.FloxApp;
-	import flox.app.managers.ResourceManager;
+	import core.app.CoreApp;
+	import core.app.managers.ResourceManager;
 	
 	public class CadetEditor_Ext_2DS extends Sprite
 	{
 		public function CadetEditor_Ext_2DS()
 		{
-			var resourceManager:ResourceManager = FloxApp.resourceManager;	
+			var resourceManager:ResourceManager = CoreApp.resourceManager;	
 			
 			// Core Component
 			resourceManager.addResource( new ComponentFactory( Entity, "Entity" ) );
@@ -59,26 +60,16 @@ package
 			// Processes
 			resourceManager.addResource( new ComponentFactory( InputProcess2D,				 "Input Process", 				"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
 			resourceManager.addResource( new ComponentFactory( WorldBounds2D, 				"World Bounds 2D", 				"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
-//			resourceManager.addResource( new ComponentFactory( PhysicsProcess, 				"Physics", 						"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
-			resourceManager.addResource( new ComponentFactory( FootprintManagerProcess, 	"Footprint Manager", 			"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
 			resourceManager.addResource( new ComponentFactory( TrackCamera2DProcess, 		"Track Camera", 				"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
-			resourceManager.addResource( new ComponentFactory( CollisionDetectionProcess, 	"Collision Detection", 			"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
 			resourceManager.addResource( new ComponentFactory( Renderer2D, 					"2D Renderer", 					"Processes", 	CadetEngineIcons.Renderer, 		ICadetScene, 	1 ) );
+			resourceManager.addResource( new ComponentFactory( PDParticleSystemComponent,	"Particle System",				"Processes",	CadetEngineIcons.Process ) );
 			
 			// Transforms
 			resourceManager.addResource( new ComponentFactory( Transform2D, 				"2D Transform", 				null, 			CadetEngineIcons.Transform, 	null, 			1 ) );
 			
 			// Skins
-			resourceManager.addResource( new ComponentFactory( GeometrySkin, 				"Geometry Skin", 				"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
-//			resourceManager.addResource( new ComponentFactory( GeometryDebugSkin, 			"Geometry Debug Skin", 			"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
-//			resourceManager.addResource( new ComponentFactory( FractalPolygonSkin, 			"Fractal Polygon Skin", 		"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
 			resourceManager.addResource( new ComponentFactory( ImageSkin, 					"Image Skin", 					"Skins", 		CadetEngineIcons.Skin ) );
-			resourceManager.addResource( new ComponentFactory( MovieClipSkin, 				"MovieClip Skin", 				"Skins", 		CadetEngineIcons.Skin ) );
-			resourceManager.addResource( new ComponentFactory( ConnectionSkin, 				"Connection Skin", 				"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
-			resourceManager.addResource( new ComponentFactory( SpringSkin, 					"Spring Skin", 					"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
-//			resourceManager.addResource( new ComponentFactory( ScrollingBackgroundSkin, 	"Scrolling Background Skin", 	"Skins", 		CadetEngineIcons.Skin, 		null, 			1 ) );
-//			resourceManager.addResource( new ComponentFactory( FootprintManagerDebugSkin, 	"Footprint Manager Debug Skin", "Skins", 		CadetEngineIcons.Skin, 		null, 			1 ) );
-//			resourceManager.addResource( new ComponentFactory( WorldBoundsDebugSkin, 		"World Bounds Debug Skin", 		"Skins",		CadetEngineIcons.Skin,		null,			1 ) );
+			resourceManager.addResource( new ComponentFactory( MovieClipSkin, 				"MovieClip Skin", 				"Skins", 		CadetEngineIcons.Skin ) );			
 			
 			// Textures
 			resourceManager.addResource( new ComponentFactory( TextureComponent,			"Texture",						"Textures",		CadetEngineIcons.Texture ) );
@@ -87,6 +78,23 @@ package
 			// Behaviours - Core
 			resourceManager.addResource( new ComponentFactory( MouseFollowBehaviour,		"Mouse Follow",					"Behaviours",	CadetEngineIcons.Behaviour, Entity,		1 ) );
 			
+			/*
+			
+			// Graphics Skins
+			resourceManager.addResource( new ComponentFactory( GeometrySkin, 				"Geometry Skin", 				"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
+//			resourceManager.addResource( new ComponentFactory( GeometryDebugSkin, 			"Geometry Debug Skin", 			"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
+//			resourceManager.addResource( new ComponentFactory( FractalPolygonSkin, 			"Fractal Polygon Skin", 		"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
+			resourceManager.addResource( new ComponentFactory( ConnectionSkin, 				"Connection Skin", 				"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
+			resourceManager.addResource( new ComponentFactory( SpringSkin, 					"Spring Skin", 					"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
+//			resourceManager.addResource( new ComponentFactory( ScrollingBackgroundSkin, 	"Scrolling Background Skin", 	"Skins", 		CadetEngineIcons.Skin, 		null, 			1 ) );
+//			resourceManager.addResource( new ComponentFactory( FootprintManagerDebugSkin, 	"Footprint Manager Debug Skin", "Skins", 		CadetEngineIcons.Skin, 		null, 			1 ) );
+//			resourceManager.addResource( new ComponentFactory( WorldBoundsDebugSkin, 		"World Bounds Debug Skin", 		"Skins",		CadetEngineIcons.Skin,		null,			1 ) );
+			
+			// Needed here?
+			resourceManager.addResource( new ComponentFactory( FootprintManagerProcess, 	"Footprint Manager", 			"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
+			resourceManager.addResource( new ComponentFactory( CollisionDetectionProcess, 	"Collision Detection", 			"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
+			
+			// Needed here?
 			resourceManager.addResource( new ComponentFactory( VehicleUserControlBehaviour, "Vehicle User Control", 		"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 	1 ) );
 			
 			// Footprints
@@ -102,7 +110,7 @@ package
 			resourceManager.addResource( new ComponentFactory( CompoundGeometry, 			"Compound Geometry", 			"Geometry", 	CadetEngineIcons.Geometry, 	Entity, 	1 ) );
 			resourceManager.addResource( new ComponentFactory( TerrainGeometry, 			"Terrain Geometry", 			"Geometry", 	CadetEngineIcons.Geometry, 	Entity, 	1 ) );
 			resourceManager.addResource( new ComponentFactory( BoundingSphere, 				"Bounding Sphere", 				"Geometry", 	CadetEngineIcons.Geometry, 	null, 		1 ) );
-			
+			*/
 		}
 	}
 }

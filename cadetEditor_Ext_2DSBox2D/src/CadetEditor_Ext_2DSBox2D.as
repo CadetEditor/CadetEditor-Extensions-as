@@ -31,14 +31,14 @@ package
 	import cadet.assets.CadetEngineIcons;
 	import cadet.entities.ComponentFactory;
 	
-	import flox.app.FloxApp;
-	import flox.app.managers.ResourceManager;
+	import core.app.CoreApp;
+	import core.app.managers.ResourceManager;
 	
 	public class CadetEditor_Ext_2DSBox2D extends Sprite
 	{
 		public function CadetEditor_Ext_2DSBox2D()
 		{
-			var resourceManager:ResourceManager = FloxApp.resourceManager;
+			var resourceManager:ResourceManager = CoreApp.resourceManager;
 
 			// Processes
 			resourceManager.addResource( new ComponentFactory( PhysicsProcess, 				"Physics", 						"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );

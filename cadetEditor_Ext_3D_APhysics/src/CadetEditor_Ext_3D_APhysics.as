@@ -21,14 +21,14 @@ package
 	import cadet3DPhysics.components.behaviours.RigidBodyBehaviour;
 	import cadet3DPhysics.components.processes.PhysicsProcess;
 	
-	import flox.app.FloxApp;
-	import flox.app.managers.ResourceManager;
+	import core.app.CoreApp;
+	import core.app.managers.ResourceManager;
 	
 	public class CadetEditor_Ext_3D_APhysics extends Sprite
 	{
 		public function CadetEditor_Ext_3D_APhysics()
 		{
-			var resourceManager:ResourceManager = FloxApp.resourceManager;
+			var resourceManager:ResourceManager = CoreApp.resourceManager;
 			
 			// Behaviours
 			resourceManager.addResource( new ComponentFactory( RigidBodyBehaviour, "Rigid Body", "Behaviours", CadetEngineIcons.Behaviour, MeshComponent, 1 ) );

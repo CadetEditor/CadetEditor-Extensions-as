@@ -37,14 +37,14 @@ package
 	import cadet3D.components.textures.BitmapCubeTextureComponent;
 	import cadet3D.components.textures.BitmapTextureComponent;
 	
-	import flox.app.FloxApp;
-	import flox.app.managers.ResourceManager;
+	import core.app.CoreApp;
+	import core.app.managers.ResourceManager;
 	
 	public class CadetEditor_Ext_3D extends Sprite
 	{
 		public function CadetEditor_Ext_3D()
 		{
-			var resourceManager:ResourceManager = FloxApp.resourceManager;
+			var resourceManager:ResourceManager = CoreApp.resourceManager;
 			
 			// Force inclusion of some types
 //			PlaneGeometryComponent;
