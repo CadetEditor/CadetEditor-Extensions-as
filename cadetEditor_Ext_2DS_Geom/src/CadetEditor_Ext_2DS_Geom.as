@@ -36,11 +36,11 @@ package
 			resourceManager.addResource( new ComponentFactory( BoundingSphere, 				"Bounding Sphere", 				"Geometry", 	CadetEngineIcons.Geometry, 	null, 		1 ) );
 			
 			// Graphics Skins
-			resourceManager.addResource( new ComponentFactory( GeometrySkin, 				"Geometry Skin", 				"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
+			resourceManager.addResource( new ComponentFactory( GeometrySkin, 				"Geometry Skin", 				"Display", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
 //			resourceManager.addResource( new ComponentFactory( GeometryDebugSkin, 			"Geometry Debug Skin", 			"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
 //			resourceManager.addResource( new ComponentFactory( FractalPolygonSkin, 			"Fractal Polygon Skin", 		"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
-			resourceManager.addResource( new ComponentFactory( ConnectionSkin, 				"Connection Skin", 				"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
-			resourceManager.addResource( new ComponentFactory( SpringSkin, 					"Spring Skin", 					"Skins", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
+			resourceManager.addResource( new ComponentFactory( ConnectionSkin, 				"Connection Skin", 				"Display", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
+			resourceManager.addResource( new ComponentFactory( SpringSkin, 					"Spring Skin", 					"Display", 		CadetEngineIcons.Skin, 		Entity, 		1 ) );
 
 		}
 	}
