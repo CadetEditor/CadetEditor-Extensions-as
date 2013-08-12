@@ -19,6 +19,7 @@ package
 	import cadet.components.processes.TouchInputMapping;
 	import cadet.components.sounds.SoundComponent;
 	import cadet.core.CadetScene;
+	import cadet.core.ComponentContainer;
 	import cadet.entities.ComponentFactory;
 	
 	import core.app.CoreApp;
@@ -29,6 +30,8 @@ package
 		public function CadetEditor_Ext()
 		{
 			var resourceManager:ResourceManager = CoreApp.resourceManager;
+			
+			resourceManager.addResource( new ComponentFactory( ComponentContainer, "Component Container" ) );
 			
 			// Processes
 			resourceManager.addResource( new ComponentFactory( KeyboardInputMapping, "Keyboard Input Mapping", "Processes", CadetEngineIcons.Process, InputProcess ) );

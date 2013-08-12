@@ -13,11 +13,11 @@ package
 	import flash.display.Sprite;
 	
 	import cadet.assets.CadetEngineIcons;
+	import cadet.core.ComponentContainer;
 	import cadet.core.ICadetScene;
 	import cadet.entities.ComponentFactory;
 	
 	import cadet2D.components.behaviours.MouseFollowBehaviour;
-	import cadet2D.components.core.Entity;
 	import cadet2D.components.materials.StandardMaterialComponent;
 	import cadet2D.components.particles.PDParticleSystemComponent;
 	import cadet2D.components.processes.InputProcess2D;
@@ -39,10 +39,7 @@ package
 	{
 		public function CadetEditor_Ext_2DS()
 		{
-			var resourceManager:ResourceManager = CoreApp.resourceManager;	
-			
-			// Core Component
-			resourceManager.addResource( new ComponentFactory( Entity, "Entity" ) );
+			var resourceManager:ResourceManager = CoreApp.resourceManager;
 			
 			// Processes
 			resourceManager.addResource( new ComponentFactory( InputProcess2D,				"Input Process", 				"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
@@ -63,7 +60,7 @@ package
 			resourceManager.addResource( new ComponentFactory( TextureAtlasComponent,		"TextureAtlas",					"Display",		CadetEngineIcons.Texture) );
 			
 			// Behaviours - Core
-			resourceManager.addResource( new ComponentFactory( MouseFollowBehaviour,		"Mouse Follow",					"Behaviours",	CadetEngineIcons.Behaviour, Entity,		1 ) );
+			resourceManager.addResource( new ComponentFactory( MouseFollowBehaviour,		"Mouse Follow",					"Behaviours",	CadetEngineIcons.Behaviour, ComponentContainer,		1 ) );
 			
 			// Materials
 			resourceManager.addResource( new ComponentFactory( StandardMaterialComponent,	"StandardMaterialComponent",	"Display",	CadetEngineIcons.Component ) );

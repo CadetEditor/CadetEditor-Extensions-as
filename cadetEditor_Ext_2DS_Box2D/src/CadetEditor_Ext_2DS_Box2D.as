@@ -13,22 +13,18 @@ package
 	import flash.display.Sprite;
 	
 	import cadet.assets.CadetEngineIcons;
-	import cadet.components.behaviours.VehicleUserControlBehaviour;
+	import cadet.core.ComponentContainer;
 	import cadet.core.ICadetScene;
 	import cadet.entities.ComponentFactory;
 	
-	import cadet2D.components.core.Entity;
-	
 	import cadet2DBox2D.components.behaviours.DistanceJointBehaviour;
-	import cadet2DBox2D.components.behaviours.MotorbikeBehaviour;
 	import cadet2DBox2D.components.behaviours.PrismaticJointBehaviour;
 	import cadet2DBox2D.components.behaviours.RevoluteJointBehaviour;
 	import cadet2DBox2D.components.behaviours.RigidBodyBehaviour;
 	import cadet2DBox2D.components.behaviours.RigidBodyCollisionDetectBehaviour;
 	import cadet2DBox2D.components.behaviours.RigidBodyMouseDragBehaviour;
-	import cadet2DBox2D.components.behaviours.SimpleVehicleBehaviour;
 	import cadet2DBox2D.components.behaviours.SpringBehaviour;
-	import cadet2DBox2D.components.behaviours.VehicleBehaviour;
+	import cadet2DBox2D.components.processes.DebugDrawProcess;
 	import cadet2DBox2D.components.processes.PhysicsProcess;
 	
 	import core.app.CoreApp;
@@ -42,23 +38,17 @@ package
 
 			// Processes
 			resourceManager.addResource( new ComponentFactory( PhysicsProcess, 				"Physics", 						"Processes", 	CadetEngineIcons.Process, 		ICadetScene, 	1 ) );
+			resourceManager.addResource( new ComponentFactory( DebugDrawProcess,			"Debug Draw Process",			"Processes",	CadetEngineIcons.Process,		ICadetScene,	1 ) );
 			
 			// Behaviours
-			resourceManager.addResource( new ComponentFactory( RigidBodyBehaviour, 			"Rigid Body", 					"Behaviours",	CadetEngineIcons.Behaviour,	Entity,			1 ) );
-			resourceManager.addResource( new ComponentFactory( RigidBodyMouseDragBehaviour, "Mouse Drag", 					"Behaviours",	CadetEngineIcons.Behaviour,	Entity,			1 ) );			
-			resourceManager.addResource( new ComponentFactory( RigidBodyCollisionDetectBehaviour, "RB Collision Detect", 	"Behaviours",	CadetEngineIcons.Behaviour,	Entity,			1 ) );
+			resourceManager.addResource( new ComponentFactory( RigidBodyBehaviour, 			"Rigid Body", 					"Behaviours",	CadetEngineIcons.Behaviour,	ComponentContainer,			1 ) );
+			resourceManager.addResource( new ComponentFactory( RigidBodyMouseDragBehaviour, "Mouse Drag", 					"Behaviours",	CadetEngineIcons.Behaviour,	ComponentContainer,			1 ) );			
+			resourceManager.addResource( new ComponentFactory( RigidBodyCollisionDetectBehaviour, "RB Collision Detect", 	"Behaviours",	CadetEngineIcons.Behaviour,	ComponentContainer,			1 ) );
 			
-			resourceManager.addResource( new ComponentFactory( DistanceJointBehaviour, 		"Distance Joint", 				"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 		1 ) );
-			resourceManager.addResource( new ComponentFactory( SpringBehaviour, 			"Spring Joint", 				"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 		1 ) );
-			resourceManager.addResource( new ComponentFactory( RevoluteJointBehaviour, 		"Revolute Joint", 				"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 		1 ) );
-			resourceManager.addResource( new ComponentFactory( PrismaticJointBehaviour, 	"Prismatic Joint", 				"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 		1 ) );
-			
-			resourceManager.addResource( new ComponentFactory( SimpleVehicleBehaviour, 		"Simple Vehicle", 				"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 		1 ) );
-			resourceManager.addResource( new ComponentFactory( VehicleBehaviour, 			"Vehicle", 						"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 		1 ) );
-			resourceManager.addResource( new ComponentFactory( MotorbikeBehaviour, 			"Motorbike", 					"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 		1 ) );
-		
-			// Doesn't really belong here..
-			resourceManager.addResource( new ComponentFactory( VehicleUserControlBehaviour, "Vehicle User Control", 		"Behaviours", 	CadetEngineIcons.Behaviour,	Entity, 	1 ) );
+			resourceManager.addResource( new ComponentFactory( DistanceJointBehaviour, 		"Distance Joint", 				"Behaviours", 	CadetEngineIcons.Behaviour,	ComponentContainer, 		1 ) );
+			resourceManager.addResource( new ComponentFactory( SpringBehaviour, 			"Spring Joint", 				"Behaviours", 	CadetEngineIcons.Behaviour,	ComponentContainer, 		1 ) );
+			resourceManager.addResource( new ComponentFactory( RevoluteJointBehaviour, 		"Revolute Joint", 				"Behaviours", 	CadetEngineIcons.Behaviour,	ComponentContainer, 		1 ) );
+			resourceManager.addResource( new ComponentFactory( PrismaticJointBehaviour, 	"Prismatic Joint", 				"Behaviours", 	CadetEngineIcons.Behaviour,	ComponentContainer, 		1 ) );
 		}
 	}
 }
